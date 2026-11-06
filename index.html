@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portofolio personal — karya, proses, dan kontak.">
+  <title>Nama Kamu — Portofolio</title>
+  <style>
+    :root {
+      --paper: #f3f0e9;
+      --ink: #20221f;
+      --muted: #6f716a;
+      --line: #d7d3c9;
+      --accent: #d9633b;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    .wrap { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+      font-family: Arial, sans-serif;
+    }
+    .mark { font-size: 15px; font-weight: 700; letter-spacing: .04em; }
+    nav { display: flex; gap: 24px; font-size: 13px; }
+    nav a { text-decoration: none; color: var(--muted); }
+    nav a:hover, nav a:focus { color: var(--ink); }
+
+    .hero {
+      min-height: 560px;
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      align-items: center;
+      gap: 48px;
+      padding: 84px 0 110px;
+    }
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--accent);
+      font: 700 12px/1.2 Arial, sans-serif;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(48px, 8vw, 96px);
+      font-weight: 400;
+      letter-spacing: -.065em;
+      line-height: .95;
+    }
+    .intro {
+      max-width: 470px;
+      margin: 30px 0 0;
+      color: var(--muted);
+      font-size: 20px;
+    }
+    .hero-note {
+      align-self: end;
+      padding-left: 24px;
+      border-left: 1px solid var(--accent);
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .hero-note strong { display: block; color: var(--ink); font-weight: 400; }
+
+    section { padding: 78px 0; border-top: 1px solid var(--line); }
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 38px;
+    }
+    h2 { margin: 0; font-size: 34px; font-weight: 400; letter-spacing: -.04em; }
+    .section-label { color: var(--muted); font: 12px Arial, sans-serif; }
+
+    .projects { display: grid; gap: 0; }
+    .project {
+      display: grid;
+      grid-template-columns: 90px 1fr auto;
+      gap: 28px;
+      align-items: baseline;
+      padding: 23px 0;
+      border-top: 1px solid var(--line);
+      text-decoration: none;
+    }
+    .project:last-child { border-bottom: 1px solid var(--line); }
+    .project-number, .project-type { color: var(--muted); font: 12px Arial, sans-serif; }
+    .project h3 { margin: 0; font-size: 25px; font-weight: 400; }
+    .project p { margin: 5px 0 0; color: var(--muted); font-size: 15px; }
+    .project:hover h3 { color: var(--accent); }
+
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+    .about-grid p { margin: 0; font-size: 22px; }
+    .details { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; font-family: Arial, sans-serif; }
+    .details dt { margin-bottom: 5px; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
+    .details dd { margin: 0; font-size: 14px; }
+
+    .contact { display: flex; justify-content: space-between; align-items: end; gap: 30px; }
+    .contact h2 { max-width: 560px; font-size: clamp(38px, 6vw, 72px); }
+    .email { color: var(--accent); font-size: 18px; text-underline-offset: 5px; }
+    footer { padding: 22px 0 35px; color: var(--muted); font: 12px Arial, sans-serif; }
+
+    @media (max-width: 680px) {
+      .wrap { width: min(calc(100% - 28px), var(--max)); }
+      nav { gap: 12px; }
+      .hero { min-height: auto; grid-template-columns: 1fr; padding: 70px 0 90px; }
+      .hero-note { align-self: auto; }
+      .project { grid-template-columns: 45px 1fr; gap: 14px; }
+      .project-type { grid-column: 2; }
+      .about-grid { grid-template-columns: 1fr; gap: 38px; }
+      .contact { display: block; }
+      .email { display: inline-block; margin-top: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="mark" href="#top">NK.</a>
+      <nav aria-label="Navigasi utama">
+        <a href="#karya">Karya</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#kontak">Kontak</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero" style="border-top: 0">
+        <div>
+          <p class="eyebrow">Desainer & pengembang</p>
+          <h1>Membuat hal digital terasa manusiawi.</h1>
+          <p class="intro">Saya Nama Kamu. Saya merancang identitas, pengalaman web, dan produk digital yang jelas, berguna, dan punya karakter.</p>
+        </div>
+        <p class="hero-note"><strong>Berbasis di Jakarta</strong>Terbuka untuk proyek pilihan<br>dan kolaborasi yang baik.</p>
+      </section>
+
+      <section id="karya">
+        <div class="section-heading"><h2>Karya terpilih</h2><span class="section-label">01 — 03</span></div>
+        <div class="projects">
+          <a class="project" href="#kontak">
+            <span class="project-number">01</span>
+            <span><h3>Ruang Baca</h3><p>Identitas dan situs untuk komunitas literasi lokal.</p></span>
+            <span class="project-type">Branding / Web</span>
+          </a>
+          <a class="project" href="#kontak">
+            <span class="project-number">02</span>
+            <span><h3>Hujan Pagi</h3><p>Pengalaman belanja sederhana untuk roastery independen.</p></span>
+            <span class="project-type">UI / E-commerce</span>
+          </a>
+          <a class="project" href="#kontak">
+            <span class="project-number">03</span>
+            <span><h3>Arsip Kota</h3><p>Platform editorial tentang cerita dan sejarah kota.</p></span>
+            <span class="project-type">Art direction / Digital</span>
+          </a>
+        </div>
+      </section>
+
+      <section id="tentang">
+        <div class="section-heading"><h2>Tentang saya</h2><span class="section-label">Sedikit konteks</span></div>
+        <div class="about-grid">
+          <p>Saya percaya pekerjaan yang baik tidak perlu berisik. Ia cukup jujur, teliti, dan menyelesaikan masalah yang tepat untuk orang yang tepat.</p>
+          <dl class="details">
+            <div><dt>Keahlian</dt><dd>Strategy, UI design, HTML & CSS</dd></div>
+            <div><dt>Pengalaman</dt><dd>6 tahun kerja mandiri</dd></div>
+            <div><dt>Saat ini</dt><dd>Menerima proyek baru</dd></div>
+            <div><dt>Bahasa</dt><dd>Indonesia & English</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section id="kontak" class="contact">
+        <h2>Punya ide yang ingin diwujudkan?</h2>
+        <a class="email" href="mailto:halo@namakamu.com">halo@namakamu.com ↗</a>
+      </section>
+    </main>
+
+    <footer>© 2025 Nama Kamu. Dibuat dengan HTML dan CSS.</footer>
+  </div>
+</body>
+</html>
